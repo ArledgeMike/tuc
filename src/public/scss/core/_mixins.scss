@@ -1,0 +1,213 @@
+@mixin respond-to($size, $dir) {
+    @if ($size == retina) {
+        @media only screen and (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2.0) {
+            @content;
+        }
+    } @else if ($size and $dir) {
+        @media screen and (#{$dir}-width: ($size + px)) {
+            @content;
+        }
+    }
+}
+
+@mixin table-defaults {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: middle;
+    font: inherit;
+    font-size: 100%;
+    table-layout: fixed;
+    text-align: left;
+}
+
+@mixin vertical-align($block: inline-block, $align: middle) {
+    display: $block;
+    vertical-align: $align;
+}
+
+// Positioning mixin that is based on absolute positioned elements transform
+@mixin positioning($center: null, $center-y: null, $center-x: null) {
+    position: absolute;
+    @if $center {
+        @include transform(translate(-50%, -50%));
+        left: 50%;
+        top: 50%;
+    }
+    @if $center-y {
+        @include transform(translateY(-50%));
+        top: 50%;
+    }
+    @if $center-x {
+        @include transform(translateX(-50%));
+        left: 50%;
+    }
+}
+
+// Resets default list styles
+@mixin reset-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+// Reset default button styles.
+// With $clean set to true, removes any styling
+// With $control-text set to true, adds default font size, formatting and text truncation
+@mixin reset-button($clean: false, $control-text: false) {
+    @include appearance(none);
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    @if($clean) {
+        background-color: transparent;
+        padding: 0;
+    }
+
+    @if($control-text) {
+        @include ellipsis;
+        font: {
+            family: $font-family-primary;
+            size: 14px;
+            weight: 400;
+        };
+    }
+}
+
+// Reset default field styles
+@mixin reset-field($padding: true, $font-size: 14px) {
+    @include appearance(none);
+    @include transition(background-color .5s);
+    border: 1px solid $color-input-border;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font: {
+        family: $font-family-primary;
+        size: $font-size;
+        weight: 300;
+    };
+    position: relative;
+
+    .is-invalid & {
+        border-color: $color-red;
+    }
+
+    @if($padding) {
+        padding: 6px 10px 4px 9px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+// Default styling of component bucket
+@mixin bucket-styling($background-color: $color-white, $padding: $default-bucket-padding, $border-radius: 2px) {
+    background-color: $background-color;
+    border: 1px solid $color-border-global;
+
+    @if($padding) {
+        padding: $padding;
+    }
+
+    @if($border-radius) {
+        border-radius: $border-radius;
+    }
+}
+
+@mixin bucket-header($padding: 10px) {
+    background-color: $color-gray-1;
+    border-bottom: 1px solid $color-border-global;
+    box-sizing: border-box;
+    margin: 0;
+    padding: $padding;
+}
+
+// Default drag and drop style (dashed border, background changes when element is dragged over)
+@mixin drop-area-style {
+    @include transition(background-color .3s, border-color .3s);
+    background-color: $color-white;
+    border: 1px dashed $color-gray;
+    display: block;
+
+    &.is-dragover {
+        background-color: $dropzone-hover-color;
+        border-color: $color-blue-btn;
+    }
+}
+
+// Basic styling for simple card that contains text
+@mixin text-card-style {
+    @include bucket-styling($background-color: $color-gray-7, $padding: 8px 10px);
+    @include ellipsis;
+    box-sizing: border-box;
+    display: block;
+    font-size: 14px;
+    position: relative;
+    width: 100%;
+
+    & + & {
+        margin-top: 10px;
+    }
+}
+
+// This generates space between action buttons
+@mixin space-between-btns($margin: 10px) {
+    [class*="btn"] {
+        + [class*="btn"] {
+            margin-left: $margin;
+        }
+    }
+}
+
+// This generates separator style between actions
+@mixin separator-between-actions($padding: 10px) {
+    padding: 0 $padding;
+
+    & + & {
+        border-left: 1px solid $color-border-global;
+    }
+}
+
+@mixin drag-button {
+    @include appearance(none);
+    @include position(absolute, 0);
+    background-color: $color-handle;
+    border: 1px solid $color-gray;
+    border-radius: 2px 2px 0 0;
+    box-sizing: border-box;
+    height: 20px;
+    min-width: 100%;
+    overflow: hidden;
+    padding: 0;
+    text-indent: -9999px;
+
+    &::before {
+        @include position(absolute, 50% null null 50%);
+        @include size(14px 1px);
+        background-color: $color-blue-light;
+        box-shadow: 0 3px 0 0 $color-blue-light, 0 6px 0 0 $color-blue-light;
+        content: '';
+        margin: {
+            left: -7px;
+            top: -3px;
+        };
+    }
+
+    &:hover {
+        background-color: darken($color-handle, 2%);
+        cursor: move;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

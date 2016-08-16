@@ -1,0 +1,22 @@
+.btn-success{
+    border-radius: 0px;
+    background-color: #FF451A;
+    border: 1px solid #D63915;
+}
+
+.btn-success{
+    &:hover{
+        background-color: darken($color: #ff451a, $amount: 4);
+        border: 1px solid #D63915;
+    }
+    &:active,
+    &:focus{
+        background-color: darken($color: #ff451a, $amount: 6) !important;
+        border: 1px solid #D63915;
+    }
+    &:hover[disabled]{
+        background-color: lighten($color: #ff451a, $amount: 4);
+        border: 1px solid #D63915;
+    };
+   
+}

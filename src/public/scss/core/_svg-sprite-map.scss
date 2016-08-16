@@ -1,0 +1,614 @@
+$icons: (
+        sprite: (
+                width: 289px,
+                height: 254px,
+                pngPath: '../images/sprite.png',
+                svgPath: '../images/sprite.svg'
+        ),
+        arrow-left-active: (
+            width: 15px,
+            height: 14px,
+            backgroundX: -94px,
+            backgroundY: -207px
+        ),
+        arrow-left-inactive: (
+            width: 15px,
+            height: 14px,
+            backgroundX: -117px,
+            backgroundY: -207px
+        ),
+        arrow-right-active: (
+            width: 15px,
+            height: 14px,
+            backgroundX: -48px,
+            backgroundY: -207px
+        ),
+        arrow-right-inactive: (
+            width: 15px,
+            height: 14px,
+            backgroundX: -71px,
+            backgroundY: -207px
+        ),
+        breadcrumbs-arrow: (
+            width: 4px,
+            height: 10px,
+            backgroundX: -194px,
+            backgroundY: -182px
+        ),
+        icn-add-link: (
+            width: 26px,
+            height: 26px,
+            backgroundX: 0px,
+            backgroundY: -116px
+        ),
+        icn-add-link-square: (
+            width: 20px,
+            height: 20px,
+            backgroundX: -187px,
+            backgroundY: 0px
+        ),
+        icn-add-small: (
+            width: 16px,
+            height: 16px,
+            backgroundX: -89px,
+            backgroundY: -230px
+        ),
+        icn-add-small-gray: (
+            width: 16px,
+            height: 16px,
+            backgroundX: -65px,
+            backgroundY: -230px
+        ),
+        icn-additional-upload: (
+            width: 14px,
+            height: 14px,
+            backgroundX: -266px,
+            backgroundY: -115px
+        ),
+        icn-alert-white: (
+            width: 17px,
+            height: 15px,
+            backgroundX: 0px,
+            backgroundY: -207px
+        ),
+        icn-arrow-more: (
+            width: 22px,
+            height: 14px,
+            backgroundX: -157px,
+            backgroundY: -150px
+        ),
+        icn-assign-values: (
+            width: 16px,
+            height: 11px,
+            backgroundX: -241px,
+            backgroundY: -174px
+        ),
+        icn-assign-values-gray: (
+            width: 16px,
+            height: 11px,
+            backgroundX: -77px,
+            backgroundY: -182px
+        ),
+        icn-break-relationship: (
+            width: 16px,
+            height: 16px,
+            backgroundX: -134px,
+            backgroundY: -230px
+        ),
+        icn-cancel-action: (
+            width: 11px,
+            height: 11px,
+            backgroundX: -120px,
+            backgroundY: -182px
+        ),
+        icn-cancel-action-gray: (
+            width: 11px,
+            height: 11px,
+            backgroundX: -266px,
+            backgroundY: -234px
+        ),
+        icn-cancel-action-red: (
+            width: 11px,
+            height: 11px,
+            backgroundX: -134px,
+            backgroundY: -116px
+        ),
+        icn-checkbox-arrow: (
+            width: 10px,
+            height: 10px,
+            backgroundX: -176px,
+            backgroundY: -182px
+        ),
+        icn-checkbox-arrow-black: (
+            width: 10px,
+            height: 10px,
+            backgroundX: -158px,
+            backgroundY: -182px
+        ),
+        icn-checkbox-arrow-blue: (
+            width: 15px,
+            height: 13px,
+            backgroundX: -140px,
+            backgroundY: -207px
+        ),
+        icn-clone: (
+            width: 18px,
+            height: 18px,
+            backgroundX: -215px,
+            backgroundY: 0px
+        ),
+        icn-clone-gray: (
+            width: 18px,
+            height: 18px,
+            backgroundX: -215px,
+            backgroundY: -26px
+        ),
+        icn-clone-white: (
+            width: 26px,
+            height: 26px,
+            backgroundX: -67px,
+            backgroundY: -116px
+        ),
+        icn-close-blue: (
+            width: 11px,
+            height: 11px,
+            backgroundX: -101px,
+            backgroundY: -182px
+        ),
+        icn-close-btn: (
+            width: 13px,
+            height: 13px,
+            backgroundX: -266px,
+            backgroundY: -137px
+        ),
+        icn-close-sm: (
+            width: 7px,
+            height: 7px,
+            backgroundX: -80px,
+            backgroundY: -54px
+        ),
+        icn-close-white: (
+            width: 11px,
+            height: 11px,
+            backgroundX: -139px,
+            backgroundY: -182px
+        ),
+        icn-cloud-upload: (
+            width: 32px,
+            height: 32px,
+            backgroundX: 0px,
+            backgroundY: 0px
+        ),
+        icn-collapse-section: (
+            width: 14px,
+            height: 2px,
+            backgroundX: -266px,
+            backgroundY: -105px
+        ),
+        icn-custom-sort: (
+            width: 19px,
+            height: 17px,
+            backgroundX: -187px,
+            backgroundY: -76px
+        ),
+        icn-custom-sort-gray: (
+            width: 19px,
+            height: 17px,
+            backgroundX: 0px,
+            backgroundY: -182px
+        ),
+        icn-darr: (
+            width: 14px,
+            height: 16px,
+            backgroundX: -43px,
+            backgroundY: -230px
+        ),
+        icn-dropdown-arr: (
+            width: 18px,
+            height: 16px,
+            backgroundX: -215px,
+            backgroundY: -52px
+        ),
+        icn-dropdown-arrow: (
+            width: 12px,
+            height: 6px,
+            backgroundX: -266px,
+            backgroundY: -200px
+        ),
+        icn-dropzone: (
+            width: 32px,
+            height: 22px,
+            backgroundX: 0px,
+            backgroundY: -40px
+        ),
+        icn-edit: (
+            width: 13px,
+            height: 15px,
+            backgroundX: -158px,
+            backgroundY: -230px
+        ),
+        icn-edit-gray: (
+            width: 13px,
+            height: 15px,
+            backgroundX: -179px,
+            backgroundY: -230px
+        ),
+        icn-edit-white: (
+            width: 13px,
+            height: 15px,
+            backgroundX: -200px,
+            backgroundY: -230px
+        ),
+        icn-empty-image: (
+            width: 27px,
+            height: 20px,
+            backgroundX: -119px,
+            backgroundY: -24px
+        ),
+        icn-error-mark: (
+            width: 18px,
+            height: 18px,
+            backgroundX: -215px,
+            backgroundY: -76px
+        ),
+        icn-extendable-section: (
+            width: 12px,
+            height: 14px,
+            backgroundX: -266px,
+            backgroundY: -83px
+        ),
+        icn-eye-hide: (
+            width: 19px,
+            height: 16px,
+            backgroundX: -187px,
+            backgroundY: -101px
+        ),
+        icn-eye-hide-white: (
+            width: 19px,
+            height: 16px,
+            backgroundX: -187px,
+            backgroundY: -152px
+        ),
+        icn-eye-show: (
+            width: 19px,
+            height: 16px,
+            backgroundX: -187px,
+            backgroundY: -28px
+        ),
+        icn-eye-show-white: (
+            width: 19px,
+            height: 16px,
+            backgroundX: -187px,
+            backgroundY: -52px
+        ),
+        icn-filter-lg-img: (
+            width: 23px,
+            height: 14px,
+            backgroundX: -95px,
+            backgroundY: -150px
+        ),
+        icn-filter-list: (
+            width: 23px,
+            height: 14px,
+            backgroundX: -126px,
+            backgroundY: -150px
+        ),
+        icn-filter-sm-img: (
+            width: 23px,
+            height: 14px,
+            backgroundX: -64px,
+            backgroundY: -150px
+        ),
+        icn-inheritance-relationship: (
+            width: 31px,
+            height: 18px,
+            backgroundX: -80px,
+            backgroundY: 0px
+        ),
+        icn-link: (
+            width: 30px,
+            height: 10px,
+            backgroundX: 0px,
+            backgroundY: -98px
+        ),
+        icn-link-gray: (
+            width: 30px,
+            height: 10px,
+            backgroundX: -39px,
+            backgroundY: -70px
+        ),
+        icn-link-white: (
+            width: 30px,
+            height: 10px,
+            backgroundX: -77px,
+            backgroundY: -70px
+        ),
+        icn-map-attributes: (
+            width: 13px,
+            height: 13px,
+            backgroundX: -266px,
+            backgroundY: -158px
+        ),
+        icn-map-attributes-gray: (
+            width: 13px,
+            height: 13px,
+            backgroundX: -266px,
+            backgroundY: -179px
+        ),
+        icn-map-values: (
+            width: 15px,
+            height: 15px,
+            backgroundX: -221px,
+            backgroundY: -230px
+        ),
+        icn-map-values-gray: (
+            width: 15px,
+            height: 15px,
+            backgroundX: -266px,
+            backgroundY: 0px
+        ),
+        icn-map-values-green: (
+            width: 15px,
+            height: 15px,
+            backgroundX: -25px,
+            backgroundY: -207px
+        ),
+        icn-merge: (
+            width: 17px,
+            height: 17px,
+            backgroundX: -241px,
+            backgroundY: 0px
+        ),
+        icn-merge-gray: (
+            width: 17px,
+            height: 17px,
+            backgroundX: -241px,
+            backgroundY: -49px
+        ),
+        icn-merge-green: (
+            width: 17px,
+            height: 17px,
+            backgroundX: -241px,
+            backgroundY: -74px
+        ),
+        icn-more-info: (
+            width: 5px,
+            height: 12px,
+            backgroundX: -266px,
+            backgroundY: -214px
+        ),
+        icn-move-sml: (
+            width: 27px,
+            height: 16px,
+            backgroundX: -119px,
+            backgroundY: -81px
+        ),
+        icn-move-sml-white: (
+            width: 27px,
+            height: 16px,
+            backgroundX: -119px,
+            backgroundY: 0px
+        ),
+        icn-nav-brands: (
+            width: 25px,
+            height: 26px,
+            backgroundX: -34px,
+            backgroundY: -116px
+        ),
+        icn-nav-copy: (
+            width: 20px,
+            height: 24px,
+            backgroundX: -154px,
+            backgroundY: -108px
+        ),
+        icn-nav-logout: (
+            width: 24px,
+            height: 17px,
+            backgroundX: -154px,
+            backgroundY: -27px
+        ),
+        icn-nav-merchandising: (
+            width: 25px,
+            height: 21px,
+            backgroundX: -101px,
+            backgroundY: -116px
+        ),
+        icn-nav-pim: (
+            width: 25px,
+            height: 19px,
+            backgroundX: -154px,
+            backgroundY: 0px
+        ),
+        icn-nav-terms: (
+            width: 19px,
+            height: 19px,
+            backgroundX: -187px,
+            backgroundY: -125px
+        ),
+        icn-nav-uom: (
+            width: 24px,
+            height: 24px,
+            backgroundX: -32px,
+            backgroundY: -150px
+        ),
+        icn-nav-value-sets: (
+            width: 27px,
+            height: 21px,
+            backgroundX: -119px,
+            backgroundY: -52px
+        ),
+        icn-partner-relationship: (
+            width: 31px,
+            height: 7px,
+            backgroundX: -40px,
+            backgroundY: -40px
+        ),
+        icn-redirect-relationship: (
+            width: 32px,
+            height: 20px,
+            backgroundX: -40px,
+            backgroundY: 0px
+        ),
+        icn-relationship: (
+            width: 18px,
+            height: 17px,
+            backgroundX: -215px,
+            backgroundY: -102px
+        ),
+        icn-run-validation: (
+            width: 15px,
+            height: 17px,
+            backgroundX: -241px,
+            backgroundY: -99px
+        ),
+        icn-run-validation-gray: (
+            width: 15px,
+            height: 17px,
+            backgroundX: -241px,
+            backgroundY: -124px
+        ),
+        icn-search: (
+            width: 17px,
+            height: 17px,
+            backgroundX: -241px,
+            backgroundY: -149px
+        ),
+        icn-search-blue: (
+            width: 17px,
+            height: 17px,
+            backgroundX: -215px,
+            backgroundY: -165px
+        ),
+        icn-subordinate: (
+            width: 16px,
+            height: 10px,
+            backgroundX: -38px,
+            backgroundY: -98px
+        ),
+        icn-subordinate-gray: (
+            width: 16px,
+            height: 10px,
+            backgroundX: -86px,
+            backgroundY: -98px
+        ),
+        icn-subordinate-green: (
+            width: 16px,
+            height: 10px,
+            backgroundX: -62px,
+            backgroundY: -98px
+        ),
+        icn-success-mark: (
+            width: 14px,
+            height: 12px,
+            backgroundX: -266px,
+            backgroundY: -23px
+        ),
+        icn-success-mark-black: (
+            width: 14px,
+            height: 12px,
+            backgroundX: -266px,
+            backgroundY: -43px
+        ),
+        icn-success-mark-green: (
+            width: 14px,
+            height: 12px,
+            backgroundX: -266px,
+            backgroundY: -63px
+        ),
+        icn-success-upload: (
+            width: 24px,
+            height: 24px,
+            backgroundX: 0px,
+            backgroundY: -150px
+        ),
+        icn-swap: (
+            width: 17px,
+            height: 13px,
+            backgroundX: -52px,
+            backgroundY: -182px
+        ),
+        icn-trash: (
+            width: 13px,
+            height: 16px,
+            backgroundX: 0px,
+            backgroundY: -230px
+        ),
+        icn-trash-grey: (
+            width: 13px,
+            height: 16px,
+            backgroundX: -113px,
+            backgroundY: -230px
+        ),
+        icn-trash-white: (
+            width: 13px,
+            height: 16px,
+            backgroundX: -241px,
+            backgroundY: -193px
+        ),
+        icn-uarr: (
+            width: 14px,
+            height: 16px,
+            backgroundX: -21px,
+            backgroundY: -230px
+        ),
+        icn-unlink: (
+            width: 31px,
+            height: 20px,
+            backgroundX: -80px,
+            backgroundY: -26px
+        ),
+        icn-unlink-white: (
+            width: 31px,
+            height: 20px,
+            backgroundX: 0px,
+            backgroundY: -70px
+        ),
+        icn-uploader-thumbnail: (
+            width: 24px,
+            height: 16px,
+            backgroundX: -154px,
+            backgroundY: -84px
+        ),
+        icn-uploading-spinner: (
+            width: 22px,
+            height: 24px,
+            backgroundX: -154px,
+            backgroundY: -52px
+        ),
+        icn-value-set: (
+            width: 17.6px,
+            height: 11px,
+            backgroundX: -215px,
+            backgroundY: -127px
+        ),
+        icn-value-set-gray: (
+            width: 17.6px,
+            height: 11px,
+            backgroundX: -215px,
+            backgroundY: -146px
+        ),
+        icn-view-data: (
+            width: 17px,
+            height: 16px,
+            backgroundX: -241px,
+            backgroundY: -25px
+        ),
+        icn-view-data-gray: (
+            width: 17px,
+            height: 16px,
+            backgroundX: -27px,
+            backgroundY: -182px
+        ),
+        triangle-asc: (
+            width: 8px,
+            height: 5px,
+            backgroundX: -215px,
+            backgroundY: -190px
+        ),
+        triangle-desc: (
+            width: 8px,
+            height: 5px,
+            backgroundX: -241px,
+            backgroundY: -217px
+        )
+);

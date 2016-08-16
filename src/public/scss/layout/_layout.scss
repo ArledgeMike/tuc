@@ -1,0 +1,210 @@
+html,
+body {
+    @include size(100%);
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $color-white;
+    color: $color-body-text;
+    font: {
+        family: $font-family-primary;
+        size: $base-font-size;
+    };
+    line-height: $base-line-height;
+    min-width: $page-width;
+
+    &.is-modal-on {
+        overflow: hidden;
+    }
+
+    //To prevent the iPhone and iPad from inflating fonts
+    @include respond-to(1024, max) {
+        -webkit-text-size-adjust: 100%;
+    }
+}
+
+img {
+    border: 0;
+    display: block;
+    max-width: 100%;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid $color-border-global;
+    clear: both;
+    margin: 20px 0;
+}
+
+// WHOLE SITE container (includes everything inside)
+.site {
+    min-height: 100%;
+    padding-left: $primary-nav-width;
+    position: relative;
+}
+
+// THIS Page container (whole page, including sidebar, but NOT header or primary nav [those modules, that are always on the same position on entire site])
+.page {
+    position: relative;
+
+    &--with-sidebar {
+        min-height: calc(100vh - #{$header-height});
+        padding-left: $sidebar-width;
+
+        .content-inner {
+            padding: 50px 100px 50px 80px;
+        }
+    }
+
+    &--alt-background {
+        background-color: $color-gray-1;
+    }
+}
+
+// LAYOUT MODULE: Content wrapper (outside the sidebar)
+.page-content {
+    position: relative;
+    width: 900px;
+    margin: 0 auto;
+}
+
+// LAYOUT MODULE: Inner content (generates page padding)
+.content-inner {
+    // Loop through $content-padding values
+    @each $direction, $value in $content-padding {
+        padding-#{$direction}: $value;
+    }
+    position: relative;
+}
+
+// LAYOUT MODULE: Breadcrumbs
+.breadcrumbs {
+    background-color: $color-white;
+    border-bottom: 1px solid $color-gray;
+    font-size: 13px;
+    padding: 7px 0 7px 30px;
+    text-transform: uppercase;
+
+    a {
+        display: inline-block;
+        line-height: 20px;
+        margin-right: 24px;
+        position: relative;
+
+        &::after {
+            @include svg-sprite(breadcrumbs-arrow);
+            @include positioning($center-y: true);
+            content: '';
+            right: -15px;
+        }
+    }
+}
+
+// Common styles of top content line
+@mixin page-content-top {
+    background-color: $color-gray-1;
+    border-bottom: 1px solid $color-border-global;
+    min-height: 42px;
+    padding: 0 30px;
+    position: relative;
+}
+
+// LAYOUT MODULE: Top of the page-content (this used or section-tabs module)
+.content-top {
+    @include clearfix;
+    @include page-content-top;
+
+    &__actions {
+        @include positioning($center-y: true);
+        @include space-between-btns($margin: 20px);
+        right: 30px;
+    }
+
+    h2 {
+        float: left;
+        margin: 20px 0 8px;
+    }
+}
+
+// LAYOUT MODULE: Tabs that changes content (this used or content-top module)
+.section-tabs {
+    @include page-content-top;
+    font-size: 0;
+    line-height: 42px;
+
+    a {
+        @include vertical-align($align: bottom);
+        background-color: $color-gray;
+        border: 1px solid $color-input-border;
+        border-radius: 6px 6px 0 0;
+        color: $color-body-text;
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: -1px;
+        padding: 0 14px;
+        text-transform: uppercase;
+
+        + a {
+            margin-left: 8px;
+        }
+
+        &.is-active,
+        &:hover {
+            background-color: $color-white;
+            border-bottom-color: $color-white;
+            text-decoration: none;
+        }
+    }
+}
+
+// TAG: Current environment tag
+.environment-tag {
+    $environments: (
+            staging: $color-green,
+            qa: $color-yellow,
+            dev: $color-red-3
+    );
+
+    @include position(fixed, 0 0 null null);
+    border-top: 3px solid;
+    color: $color-black;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    z-index: 99;
+
+    &__label {
+        @include ellipsis($width: 100px);
+        @include positioning($center-x: true);
+        border-radius: 0 0 3px 3px;
+        box-sizing: border-box;
+        height: 15px;
+        line-height: 13px; //-2px baseline fix
+        min-width: 60px;
+        padding: 0 5px;
+        top: 0;
+        vertical-align: top;
+    }
+
+    @each $name, $color in $environments {
+        &--#{$name} {
+            border-color: $color;
+
+            // scss-lint:disable SelectorFormat
+            .environment-tag__label {
+                background-color: $color;
+            }
+        }
+    }
+}
+
+// TAG: Page build tag at the right bottom corner
+.page-build-tag {
+    @include position(fixed, null 10px 5px null);
+    color: $color-gray;
+    font-size: 12px;
+}

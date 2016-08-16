@@ -1,0 +1,65 @@
+// FRAMEWORK CONFIG:
+// SUSY Global configuration (default layout)
+$susy: (
+        columns: 12,
+        gutters: (13 / 30)
+);
+
+// SITE CONFIG:
+// SITE LAYOUT CONFIG MAP: Global SITE LAYOUT values
+// USAGE: call global() function (declared on _functions.scss)
+// Note that depth of map is reversed using global() function. Use global(header, zIndex) and NOT global(zIndex, header)
+// For example, z-index: global(header, zIndex). First value is property type, and the second is name of the element
+$layout-global-config: (
+        width: (
+                sidebar: 279px,
+        ),
+        height: (
+                header: 84px,
+                breadcrumbs: 52px,
+                footer: 51px,
+                // If you change sticky element heights, do not forget to check React views, because using <Stickys...> those heights are hardcoded
+                stickyElement: (
+                        table: 44px,
+                        tableLarge: 62px
+                )
+        ),
+        zIndex: (
+                modal: 19,
+                orderPopup: 18,
+                error: 17,
+                environment: 16,
+                searchSuggestions: 15,
+                header: 14,
+                sidebar: 12,
+                breadcrumbs: 11,
+                footer: 13,
+                loader: 10,
+                stickyElement: (
+                        topLevel: 9,
+                        table: 8,
+                        pivot1: 7,
+                        pivot2: 6,
+                        pivot3: 5
+                )
+        )
+);
+
+// FRAMEWORK and SITE CONFIG:
+// SUSY layouts together with SITE layout configuration.
+// For SUSY, use with susy-breakpoint() mixin as the second parameter. It will change the gutters, column size and etc.
+// For SITE LAYOUT CONFIG, use mobile() or tablet() functions, that works similar to global(). For example mobile(header, height) will return height value.
+$mobile-layout: (
+        columns: 1,
+        container: 600px,
+        gutters: (1 / 25),
+        layout-config: ( // NON-SUSY values. Page layout configuration
+                height: (
+                        header: 56px,
+                ),
+        )
+);
+
+$tablet-layout: (
+        container: 960px
+);
