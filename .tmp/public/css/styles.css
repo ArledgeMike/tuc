@@ -7762,7 +7762,7 @@ body {
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background-color: #060808;
+  background-color: #202729;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -7801,8 +7801,16 @@ body {
 .sidebar-nav li {
   position: relative;
   line-height: 2.25em;
-  color: gray;
+  color: #9EA499;
   font-size: 0.9em;
+}
+
+.sidebar-nav li a.active {
+  color: #FAFBFA;
+}
+
+.sidebar-nav li a.active i {
+  color: #296172;
 }
 
 .sidebar-nav li.divider {
@@ -7813,7 +7821,7 @@ body {
 }
 
 .sidebar-nav li:first-child {
-  background-color: teal;
+  background-color: #296172;
   height: 7em;
   padding: 1.5em;
   margin-bottom: 1.5em;
@@ -7824,7 +7832,7 @@ body {
   height: 100%;
   border-style: dashed;
   border-width: 3px;
-  border-color: white;
+  border-color: #FAFBFA;
   position: relative;
 }
 
@@ -7849,8 +7857,12 @@ body {
 
 .sidebar-nav li a:hover {
   text-decoration: none;
-  color: #fff;
+  color: #FAFBFA;
   background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:hover i {
+  color: #FAFBFA;
 }
 
 .sidebar-nav li a:active,
@@ -7918,13 +7930,14 @@ body {
   height: 35px;
   overflow: hidden;
   border-radius: 100%;
-  background-color: red;
+  background-color: #FAFBFA;
   margin-top: 8px;
 }
 
 #top_nav .user_image i {
   position: relative;
   font-size: 2.5em;
+  color: #9EA499;
   left: 50%;
   transform: translateX(-50%);
   margin-left: 1px;
@@ -7981,6 +7994,10 @@ header {
   padding: 0 0.5em 4em 0.5em;
 }
 
+.title_row {
+  padding: 0;
+}
+
 .title_row h1 {
   margin-bottom: 0.5em;
   margin-top: 0.25em;
@@ -7991,7 +8008,15 @@ header {
   padding-bottom: 1em;
 }
 
+.nav-pills > li.active > a {
+  color: #296172;
+  border-radius: 3px;
+  background-color: #296172;
+  color: #FAFBFA;
+}
+
 .nav-pills > li > a {
+  color: #C7C7B2;
   padding: 4px 12px;
 }
 
@@ -8009,7 +8034,7 @@ header {
   float: left;
   display: inline-block;
   border-radius: 100%;
-  border: 3px solid gray;
+  border: 3px solid #C7C7B2;
   height: 1.85em;
   width: 1.85em;
   margin-right: 1.75em;
@@ -8022,6 +8047,14 @@ header {
   white-space: nowrap;
 }
 
+.overview_filter li.active {
+  border-color: #296172;
+}
+
+.overview_filter li.active a i {
+  color: #296172;
+}
+
 .overview_filter li a {
   display: block;
   width: 100%;
@@ -8032,7 +8065,7 @@ header {
   color: gray;
   width: 100%;
   text-align: center;
-  line-height: 1.26em;
+  line-height: 1.459em;
 }
 
 .content_row > div {
@@ -8054,6 +8087,10 @@ header {
   margin-bottom: 1em;
   cursor: pointer;
   border-radius: 4px;
+}
+
+.card.selected {
+  background-color: lightgray;
 }
 
 .card:hover {
@@ -8078,6 +8115,18 @@ header {
 
 .card .inner p {
   color: lightgray;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 50%;
+  }
+  .filter_row > div {
+    margin-bottom: 2em;
+  }
+  .filter_row .nav-pills {
+    float: left !important;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

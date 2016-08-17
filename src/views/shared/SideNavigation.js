@@ -1,64 +1,80 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
+
+import SideNavigationLinks from './SideNavigation/SideNavigationLinks';
+
 class SideNavigation extends Component {
 
     render() {
-        return (
 
-        <div id="sidebar-wrapper">
-            <ul className="sidebar-nav">
-                <li className="dropper">
-                    <div><i className="fa fa-upload" aria-hidden="true"></i></div>
-                </li>
-                <li className="divider">
-                    <a href="#">MAIN</a>
-                </li>
-                <li>
-                    <a href="#"><i className="fa fa-check-circle-o" aria-hidden="true"></i>
- Overview</a>
-                </li>
-                <li>
-                    <a href="#"><i className="fa fa-map-o" aria-hidden="true"></i>
- Activity</a>
-                </li>
-                <li>
-                    <a href="#"><i className="fa fa-heart-o" aria-hidden="true"></i>
- Dearest</a>
-                </li>
-                <li>
-                    <a href="#"><i className="fa fa-folder-open-o" aria-hidden="true"></i>
- Folders</a>
-                </li>
-                <li className="divider">
-                    <a href="#">FILTER</a>
-                </li>
-                <li>
-                    <a href="#"><i className="fa fa-file-image-o" aria-hidden="true"></i>
- Images</a>
-                </li>
-                <li>
-                    <a href="#"><i className="fa fa-volume-up" aria-hidden="true"></i>
- Audio</a><span className="badge">8</span>
-                </li>
-                <li>
-                    <a href="#"><i className="fa fa-file-video-o" aria-hidden="true"></i>
- Video</a>
-                </li>
-                <li>
-                    <a href="#"><i className="fa fa-sticky-note-o" aria-hidden="true"></i>
- Notes</a>
-                </li>
-                <li>
-                    <a href="#"><i className="fa fa-link" aria-hidden="true"></i>
- Links</a>
-                </li>
-                <li>
-                    <a href="#"><i className="fa fa-files-o" aria-hidden="true"></i>
- Files</a>
-                </li>
-            </ul>
-        </div>
-     );
+        const mainLinks = [{
+                linkName:'Overview',
+                href:'/',
+                iconClass:'fa fa-check-circle-o'
+            },{
+                linkName:'Activity',
+                href:'/activity',
+                iconClass:'fa fa-map-o'
+            },{
+                linkName:'Dearest',
+                href:'/dearest',
+                iconClass:'fa fa-heart-o'
+            },{
+                linkName:'Folder',
+                href:'/folder',
+                iconClass:'fa fa-folder-open-o'
+            }
+        ].map(function(result) {
+            return <SideNavigationLinks key={result.linkName} href={result.href} iconClass={result.iconClass} linkName={result.linkName} />;
+        });
+
+        const filterLinks =[{
+                linkName:'Images',
+                href:'/images',
+                iconClass:'fa fa-file-image-o'
+            },{
+                linkName:'Audio',
+                href:'/audio',
+                iconClass:'fa fa-volume-up'
+            },{
+                linkName:'Video',
+                href:'/video',
+                iconClass:'fa fa-file-video-o'
+            },{
+                linkName:'Notes',
+                href:'/notes',
+                iconClass:'fa fa-sticky-note-o'
+            },{
+                linkName:'Links',
+                href:'/links',
+                iconClass:'fa fa-link'
+            },{
+                linkName:'Files',
+                href:'/files',
+                iconClass:'fa fa-files-o'
+            }
+        ].map(function(result) {
+            return <SideNavigationLinks key={result.linkName} href={result.href} iconClass={result.iconClass} linkName={result.linkName} />;
+        });
+
+
+        return (
+            <div id='sidebar-wrapper'>
+                <ul className='sidebar-nav'>
+                    <li className='dropper'>
+                        <div><i className='fa fa-upload' aria-hidden='true'></i></div>
+                    </li>
+                    <li className='divider active'>
+                        <Link to='#'>MAIN</Link>
+                    </li>
+                    {mainLinks}
+                    <li className='divider'>
+                        <Link to='#'>FILTER</Link>
+                    </li>
+                    {filterLinks}
+                </ul>
+            </div>
+        );
     }
 }
 

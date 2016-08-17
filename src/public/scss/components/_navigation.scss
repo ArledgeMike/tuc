@@ -22,7 +22,7 @@ body {
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background-color:rgb(6,8,8);
+    background-color:$black;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -62,8 +62,14 @@ body {
 .sidebar-nav li {
     position:relative;
     line-height: 2.25em;
-    color: gray;
+    color: $warm-gray;
     font-size: 0.9em;
+}
+.sidebar-nav li a.active{
+    color:$white;
+}
+.sidebar-nav li a.active i{
+    color:$teal;
 }
 .sidebar-nav li.divider{
       font-size: 0.75em;
@@ -73,7 +79,7 @@ body {
 
 }
 .sidebar-nav li:first-child{
-     background-color: teal;
+     background-color: $teal;
     height: 7em;
     padding: 1.5em;
     margin-bottom:1.5em;
@@ -86,7 +92,7 @@ width: 100%;
     height: 100%;
     border-style: dashed;
     border-width: 3px;
-    border-color: white;
+    border-color: $white;
     position: relative;
 }
 .dropper div i{
@@ -111,8 +117,11 @@ width: 100%;
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: $white;
     background: rgba(255,255,255,0.2);
+}
+.sidebar-nav li a:hover i {
+    color: $white;
 }
 
 .sidebar-nav li a:active,
@@ -174,12 +183,13 @@ width: 100%;
     height: 35px;
     overflow: hidden;
     border-radius: 100%;
-    background-color: red;
+    background-color: $white;
     margin-top: 8px;
 
         i{
     position: relative;
     font-size: 2.5em;
+    color:$warm-gray;
     left: 50%;
     transform: translateX(-50%);
     margin-left: 1px;

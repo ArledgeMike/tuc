@@ -1,6 +1,9 @@
 header{
     padding: 0 0.5em 4em 0.5em;
 }
+.title_row{
+    padding:0;
+}
 .title_row h1{
    margin-bottom: 0.5em;
     margin-top: 0.25em;
@@ -9,8 +12,14 @@ header{
     border-bottom: thin solid gray;
     padding-bottom: 1em;
 }
-.nav-pills > li.active > a{}
+.nav-pills > li.active > a{
+    color:$teal;
+    border-radius:3px;
+    background-color:$teal;
+    color:$white;
+}
 .nav-pills > li > a{
+    color:$light-gray;
     padding:4px 12px;
 }
 .filter_row > div{
@@ -25,7 +34,7 @@ header{
         float: left;
         display: inline-block;
         border-radius: 100%;
-        border: 3px solid gray;
+        border: 3px solid $light-gray;
         height: 1.85em;
         width: 1.85em;
         margin-right: 1.75em;
@@ -36,7 +45,12 @@ header{
             border: none;
             white-space: nowrap;
         }
-
+        &.active{
+            border-color:$teal;
+        }
+        &.active a i{
+            color:$teal;
+        }
         a{
             display:block;
             width:100%;
@@ -46,7 +60,7 @@ header{
                 color:gray;
                 width:100%;
                 text-align:center;
-                line-height:1.26em;
+                line-height:1.459em;
             }
         }
     }
@@ -79,6 +93,11 @@ header{
     margin-bottom:1em;
     cursor:pointer;
     border-radius:4px;
+
+    &.selected{
+         background-color:lightgray;
+    }
+
     &:hover{
         background-color:lightgray;
     }
@@ -98,4 +117,17 @@ header{
             color:lightgray;
         }
     }
+}
+
+@media (max-width: 768px){
+    .card{
+        width:50%;
+    }
+    .filter_row > div{
+        margin-bottom:2em;
+    }
+    .filter_row .nav-pills{
+        float:left !important;
+    }
+
 }

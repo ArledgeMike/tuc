@@ -1,13 +1,20 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
-class TopNavigation extends Component {
 
+var $ = require('jquery');
+class TopNavigation extends Component {
+    componentDidMount(){
+         $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    }
     render() {
         return (
             <nav className="navbar navbar-default navbar-inverse" id="top_nav">
                 <div className="container-fluid">
                     <div className="navbar-header">
-                        <button type="button" className="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                        <button type="button" className="collapsed navbar-toggle" id="menu-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
                             <span className="sr-only">Toggle navigation</span>
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
